@@ -10,6 +10,8 @@ It's a Python project to simulate the operating system.
 
    - ***shell_commands:*** This use os library to access shell commands through the IDE
 
+     ------
+
      
 
 2. #### **Class VirtualDisk:**
@@ -37,6 +39,8 @@ It's a Python project to simulate the operating system.
    - ***read_BLock:***
 
      - Take the cluster number which user want to read/print.
+
+       ------
 
        
 

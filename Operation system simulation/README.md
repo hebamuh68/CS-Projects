@@ -6,15 +6,15 @@ It's a Python project to simulate the operating system.
 
 ## Classes & Functions
 
-1. #### **Class CMD:** 
+1) #### **Class CMD:** 
 
    - ***shell_commands:*** This use os library to access shell commands through the IDE
 
-     ------
+------
 
-     
 
-2. #### **Class VirtualDisk:**
+
+1) #### **Class VirtualDisk:**
 
    - ***Instructor**:* 
 
@@ -40,11 +40,11 @@ It's a Python project to simulate the operating system.
 
      - Take the cluster number which user want to read/print.
 
-       ------
+------
 
-       
 
-3. #### Class FAT
+
+1) #### Class FAT
 
    - ***Instructor**:* 
 

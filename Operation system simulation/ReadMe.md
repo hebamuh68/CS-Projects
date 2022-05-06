@@ -114,10 +114,50 @@ It's a Python project to simulate the operating system.
    - ***Write_Directory()***
 
      - Write the directory table into virtual disk through these steps:
+
        1. Get the first empty cluster by ***Get_available_CLuster()*** if the user didn't enter first cluster or he entered non empty cluster
        2. If there's no empty cluster display ***There's no Empty cluster*** for the user
        3. Use ***write_BLock()*** which take all entries and first cluster, then write it on virtual disk
-       4. Update fat table 
+
+       
+
+   - ***Update_Fat()***
+
+     - Update fat table after writing directory on it
+
+       
+
+   - ***Read_directory()***
+
+     - Take the first cluster to read from and pass it to ***read_BLock()*** of virtual_disk
+
+     - read blocks till ***fat_obj.Get_Next(i) != -1** which mean it's empty and stop reading
+
+       
+
+   - ***sreach_directory()***
+
+     - Take file name and search through directory table 
+
+     - Return it's index if found, or return -1
+
+       
+
+   - ***update_content()***
+
+     - Take file_name to update and the new file content
+
+     - check by ***search_directory*** if the entry is exist
+
+     - If exist delete the old entry and add the new one in ***directory_table***
+
+     - else will return ***"Entry not found"***
+
+       
+
+   - ***delete_directory()***
+
+     - read blocks till ***fat_obj.Get_Next(i) != -1 *** which mean it's empty and stop reading
 
 ## Contributing
 

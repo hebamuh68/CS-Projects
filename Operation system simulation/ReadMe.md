@@ -105,7 +105,7 @@ It's a Python project to simulate the operating system.
 
        
 
-   - ***print_Dir()**
+   - ***print_Dir()***
 
      - print directory array
 

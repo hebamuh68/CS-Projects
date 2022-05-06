@@ -157,7 +157,7 @@ It's a Python project to simulate the operating system.
 
    - ***delete_directory()***
 
-     - read blocks till ***fat_obj.Get_Next(i) != -1 *** which mean it's empty and stop reading
+     - read blocks till ***fat_obj.Get_Next(i) != -1*** which mean it's empty and stop reading
 
 ## Contributing
 

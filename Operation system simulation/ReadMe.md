@@ -4,7 +4,7 @@ It's a Python project to simulate the operating system.
 
 
 
-## Classes & Functions
+## Report
 
 1. #### **Class CMD:** 
 
@@ -105,7 +105,7 @@ It's a Python project to simulate the operating system.
 
        
 
-   - ***print_Dir()***
+   - ***print_Dir()**
 
      - print directory array
 
@@ -113,7 +113,12 @@ It's a Python project to simulate the operating system.
 
    - ***Write_Directory()***
 
-     - 
+     - Write the directory table into virtual disk through these steps:
+       1. Get the first empty cluster by ***Get_available_CLuster()*** if the user didn't enter first cluster or he entered non empty cluster
+       2. If there's no empty cluster display ***There's no Empty cluster*** for the user
+       3. Use ***write_BLock()*** which take all entries and first cluster, then write it on virtual disk
+       4. Update fat table 
 
 ## Contributing
+
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.

@@ -3,10 +3,6 @@
 It's a Python project to simulate the operating system.
 
 
-https://user-images.githubusercontent.com/69214737/167249533-8689deea-158c-47bb-a696-f8fc4e907e7e.mp4
-
-
-
 
 ## Report
 

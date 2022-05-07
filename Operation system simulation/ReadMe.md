@@ -2,7 +2,9 @@
 
 It's a Python project to simulate the operating system.
 
-[![Demo CountPages alpha](https://drive.google.com/file/d/17mnd1knbMekad70uO9Tjmi-R0ODhbjjg/view?usp=sharing)
+
+https://user-images.githubusercontent.com/69214737/167249533-8689deea-158c-47bb-a696-f8fc4e907e7e.mp4
+
 
 
 

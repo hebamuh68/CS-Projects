@@ -6,7 +6,7 @@ It's a Python project to simulate the operating system.
 
 ## Report
 
-1. #### **Class CMD:** 
+1. ### **Class CMD:** 
 
    - ***dir()***  Displays directory of files and directories stored on disk
 
@@ -36,7 +36,7 @@ It's a Python project to simulate the operating system.
 
      
 
-2. #### **Class Virtual-disk:**
+2. ### **Class Virtual-disk:**
 
    - ***Instructor()*** 
 
@@ -64,7 +64,7 @@ It's a Python project to simulate the operating system.
 
        
 
-3. #### Class FAT
+3. ### Class FAT
 
    - ***Instructor()*** 
 
@@ -110,7 +110,7 @@ It's a Python project to simulate the operating system.
 
 
 
-4. #### Class Directory_Entry
+4. ### Class Directory_Entry
 
    - ***Instructor()*** 
 
@@ -126,7 +126,7 @@ It's a Python project to simulate the operating system.
 
      
 
-5. #### Class Directory:
+5. ### Class Directory:
 
    - ***Instructor()*** 
 
@@ -186,7 +186,7 @@ It's a Python project to simulate the operating system.
 
        
 
-6. #### **Class File_Entry**:
+6. ### **Class File_Entry**:
 
    - ***Write_file()***
 

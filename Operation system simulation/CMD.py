@@ -14,25 +14,44 @@ class main:
         self.virtualObj = VirtualDisk()
         self.fileObj = File_Entry()
 
-    def dir(self):
+    def dir(self, dir_table=None):
+
+        if dir_table == None:
+            dir_table = self.dir_obj.print_Dir(self)
+            self.dir_table = self.dir_obj.print_Dir(self)
+
         file_count = 0
         file_size = 0
         dir_count = 0
         F_space = self.fat_obj.Get_free_space()
 
-        dir_table = self.dir_obj.print_Dir(self)
         for i in range(len(dir_table)):
-            if dir_table[i][1] == "0x0":  # file
-                print("           ", dir_table[i][3], dir_table[i][0])
+            if self.dir_table[i][1] == "0x0":  # file
+                print("           ", self.dir_table[i][3], self.dir_table[i][0])
                 file_count += 1
-                file_size += dir_table[i][3]
+                file_size += self.dir_table[i][3]
 
             else:
-                print("<DIR>        ", dir_table[i][0])
+                print("<DIR>        ", self.dir_table[i][0])
                 dir_count += 1
 
         print("             ", file_count, "File(s)      ", file_size, "bytes")
         print("             ", dir_count, "Dir(s)       ", F_space, "bytes free")
+
+    def cd(self, dir_name):
+        first_cluster = self.dir_obj.search_directory(self, dir_name)
+        if first_cluster == -1:
+            print("The file doesn't exist")
+        else:
+            dir_table = self.dir_obj.print_Dir(self)
+            cur_dir_table = dir_table[first_cluster]  # ['dir1', 'x0', 0, 0, None]
+            cur_dir_table[4] = []  # none
+            dir_of_cur_dir = cur_dir_table[4]
+
+            command = input(f"/heba/{dir_name}>> ")
+            this_dir_table = dir_of_cur_dir
+            if command == "dir":
+                main.dir(self, this_dir_table)
 
     def Import(self, path):
 
@@ -103,7 +122,12 @@ class main:
         elif f_destination != -1:
             yes = input("This file name already exist, do you want to overwrite? ")
             if yes == "y":
-                dir_table[f_destination] = dir_table[f_source]
+                src = dir_table[f_source]
+                desnew = [desname]
+
+                for i in src[1:]:
+                    desnew.append(i)
+                self.dir_obj.update_content(self, desnew[0], desnew[1], desnew[2], desnew[3], desnew[4])
         else:
             src = dir_table[f_source]
             desnew = [desname]
@@ -122,13 +146,6 @@ class main:
             print("The file already exist")
         else:
             self.dir_obj(dir_name, "x0", 0, 0, None)
-
-    def cd(self, dir_name):
-        first_cluster = self.dir_obj.search_directory(self, dir_name)
-        if first_cluster != -1:
-            print("The file doesn't exist")
-        else:
-            print(f"/heba/{dir_name}")
 
     def help(self, arg, command):
         commands = ["cd", "cls", "dir", "exit", "cd", "rd", "md", "rename", "type", "import",
@@ -165,5 +182,5 @@ class main:
             elif arg == "del":
                 print("Deletes (erases) files from disk. ")
 
-            elif arg =="help":
+            elif arg == "help":
                 print(" It provides online information about available commands and the shell environment.")

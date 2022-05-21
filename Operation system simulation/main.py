@@ -8,7 +8,7 @@ run = True
 while run == True:
     command = list(map(str, input("> ").split()))
     commands = ["cd", "cls", "dir", "exit", "cd", "rd", "md", "rename", "type", "import",
-                "export"]
+                "export", "help"]
 
     if command[0] in commands:
 
@@ -51,9 +51,9 @@ while run == True:
 
         elif command[0] == "help":
             if len(command) == 1:
-                print("the Command Prompt command that's used to provide more information on another command.")
+                obj.help(command[0])
             else:
-                obj.help(command[1], command)
+                obj.help(command[1])
 
 
         elif command[0] == "exit":
